@@ -20,11 +20,21 @@ AIエージェントを中心に、GitHub Issueでタスクを管理しながら
 5. `.github/ISSUE_TEMPLATE/implementation.md` から実装Issueを小さく作る
 6. AIエージェントにIssue単位で実装を依頼する
 
+## 推奨AI開発フロー
+
+- Codexを実装、テスト、Git操作、PR作成の主担当にする
+- GitHub Actionsでlint、型チェック、テスト、buildを必須確認にする
+- CodexのPRレビューは、ロジック、データ保存、認証、セキュリティなど重要な変更に絞って使う
+- GeminiやAntigravityは、別解の検討、資料・画像を含む調査、UI案の比較などの補助に使う
+- 複数のAIエージェントで同じブランチを同時に編集しない
+
+GeminiやAntigravityを使う場合も、実装の最終責任とPR作成はCodexに集約すると、変更の経緯とレビュー対象を追いやすくなります。
+
 ## AI向けルール
 
 AIエージェント向けの作業ルールは [AGENTS.md](AGENTS.md) にまとめています。
 
-Codex、Cursor、Claude CodeなどのAIコーディングエージェントには、まず `AGENTS.md` と対象Issueを読ませてから作業させてください。
+Codexを含むAIコーディングエージェントには、まず `AGENTS.md` と対象Issueを読ませてから作業させてください。
 
 ## 用意しているテンプレート
 
